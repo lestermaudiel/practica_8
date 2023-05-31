@@ -1,14 +1,14 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Cliente.php';
 
 
-if($_POST['producto_nombre'] != '' && $_POST['producto_precio']  != '' && $_POST['producto_id'] != ''){
+if($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cliente_id'] != ''){
 
 
 
     try {
-        $producto = new Producto($_POST);
-        $resultado = $producto->modificar();
+        $cliente = new Cliente($_POST);
+        $resultado = $cliente->modificar();
 
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -54,7 +54,7 @@ if($_POST['producto_nombre'] != '' && $_POST['producto_precio']  != '' && $_POST
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/practica_8/controladores/productos/buscar.php?producto_nombre=<?= $_POST['producto_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/practica_8/controladores/clientes/buscar.php?cliente_nombre=<?= $_POST['cliente_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

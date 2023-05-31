@@ -1,14 +1,14 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Cliente.php';
 
 
-if($_POST['producto_nombre'] != '' && $_POST['producto_precio'] != ''){
+if($_POST['cliente_nombre'] != '' && $_POST['cliente_nit'] != ''){
 
 
 
     try {
-        $producto = new Producto($_POST);
-        $resultado = $producto->guardar();
+        $cliente = new Cliente($_POST);
+        $resultado = $cliente->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -54,7 +54,7 @@ if($_POST['producto_nombre'] != '' && $_POST['producto_precio'] != ''){
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/practica_8/vistas/productos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/practica_8/vistas/clientes/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
